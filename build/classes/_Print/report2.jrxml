@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="368" pageHeight="566" columnWidth="328" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="946388e6-f71f-4e51-8377-dbe36a6b9170">
+	<property name="ireport.zoom" value="2.5937424601000028"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="286"/>
+	<parameter name="inventory5" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     order1.`id` AS order1_id,
+     order1.`order_id` AS order1_order_id,
+     order1.`productname` AS order1_productname,
+     order1.`quantity` AS order1_quantity,
+     order1.`type` AS order1_type,
+     order1.`price` AS order1_price,
+     order1.`supliername` AS order1_supliername,
+     order1.`date` AS order1_date,
+     customerreceipt.`id` AS customerreceipt_id,
+     customerreceipt.`order_id` AS customerreceipt_order_id,
+     customerreceipt.`total` AS customerreceipt_total,
+     customerreceipt.`amount` AS customerreceipt_amount,
+     customerreceipt.`balance` AS customerreceipt_balance,
+     customerreceipt.`date` AS customerreceipt_date
+FROM
+     `customerreceipt` customerreceipt INNER JOIN `order1` order1 ON customerreceipt.`order_id` = order1.`order_id`
+WHERE
+     customerreceipt.`order_id` = $P{inventory5}]]>
+	</queryString>
+	<field name="order1_id" class="java.lang.Integer"/>
+	<field name="order1_order_id" class="java.lang.Integer"/>
+	<field name="order1_productname" class="java.lang.String"/>
+	<field name="order1_quantity" class="java.lang.Integer"/>
+	<field name="order1_type" class="java.lang.String"/>
+	<field name="order1_price" class="java.lang.Double"/>
+	<field name="order1_supliername" class="java.lang.String"/>
+	<field name="order1_date" class="java.sql.Date"/>
+	<field name="customerreceipt_id" class="java.lang.Integer"/>
+	<field name="customerreceipt_order_id" class="java.lang.Integer"/>
+	<field name="customerreceipt_total" class="java.lang.Double"/>
+	<field name="customerreceipt_amount" class="java.lang.Double"/>
+	<field name="customerreceipt_balance" class="java.lang.Double"/>
+	<field name="customerreceipt_date" class="java.sql.Date"/>
+	<group name="payyfooter">
+		<groupExpression><![CDATA[$F{order1_id}]]></groupExpression>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="141" splitType="Stretch">
+			<textField>
+				<reportElement x="266" y="0" width="37" height="20" uuid="94a4b65c-4ad9-4f3c-b231-8211332be726"/>
+				<textFieldExpression><![CDATA[$F{order1_order_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="20" width="130" height="20" forecolor="#6666FF" uuid="474e1cd3-c27a-418d-ad9b-8bb332f5a7fa"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Hóa Đơn Mua Hàng]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="0" width="50" height="20" uuid="defda069-67e1-453a-8414-21ab707d8ae3"/>
+				<text><![CDATA[Receipt ID:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="40" width="38" height="20" uuid="118edea5-b69d-45db-a7bf-24efda19ccc6"/>
+				<text><![CDATA[Time: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="254" y="40" width="62" height="20" uuid="72b15688-6786-408b-bf25-408fb82a40be"/>
+				<textFieldExpression><![CDATA[$F{customerreceipt_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="34" y="0" width="69" height="20" forecolor="#FF0066" uuid="5b4f0e38-e5ee-4b6d-86ab-3b5d88af314d"/>
+				<text><![CDATA[Product]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="103" y="0" width="63" height="20" forecolor="#FF0066" uuid="49627521-b2ec-4a72-a39c-aa0532fd3ecb"/>
+				<text><![CDATA[Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="0" width="50" height="20" forecolor="#FF0066" uuid="a3e9aef2-ab1b-4649-80a4-bb046dae09bd"/>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="0" width="62" height="20" forecolor="#FF0066" uuid="6b8273da-e083-41f8-958b-bf831883fbcd"/>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<line>
+				<reportElement x="34" y="20" width="244" height="1" uuid="c77cf26a-51ff-499f-a953-bd92a27bc1df"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="34" y="0" width="69" height="20" forecolor="#000000" uuid="49596f5b-8bdf-4b14-ac2a-ffc19e5bca2b"/>
+				<textFieldExpression><![CDATA[$F{order1_productname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="0" width="62" height="20" forecolor="#000000" uuid="33202bac-b204-4dea-80a9-4312bfd6838d"/>
+				<textFieldExpression><![CDATA[$F{order1_quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="0" width="63" height="20" forecolor="#000000" uuid="c09b9252-f6c1-4b08-9c89-b4e0d3249380"/>
+				<textFieldExpression><![CDATA[$F{order1_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="166" y="0" width="50" height="20" forecolor="#000000" uuid="3f7b3c1d-2d73-4b3b-98f7-f5744a8e92aa"/>
+				<textFieldExpression><![CDATA[$F{order1_price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="172" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="40" width="54" height="15" uuid="05770f26-389c-4c7d-8916-59712f2c6992"/>
+				<text><![CDATA[Amount $:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="234" y="40" width="59" height="15" uuid="402c2f0c-d9cf-4121-b22c-14ec520b33c2"/>
+				<textFieldExpression><![CDATA[$F{customerreceipt_amount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="176" y="66" width="54" height="13" uuid="37e97b87-08c1-4044-b403-d357bf5d05e0"/>
+				<text><![CDATA[ Balance $:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="234" y="66" width="59" height="13" forecolor="#FF0000" uuid="5f8252f3-771c-4e9b-928a-de93d3cb9553"/>
+				<textFieldExpression><![CDATA[$F{customerreceipt_balance}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="192" y="55" width="86" height="1" uuid="fdda3640-7ba9-41d4-87c7-550a3b309aaa"/>
+			</line>
+			<staticText>
+				<reportElement x="192" y="25" width="42" height="20" uuid="4245086d-a27d-4c9a-a0a3-b29407819ffb"/>
+				<text><![CDATA[Total $:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="234" y="25" width="59" height="20" uuid="18c66058-44ce-46b2-a190-92f997dfdeac"/>
+				<textFieldExpression><![CDATA[$F{customerreceipt_total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement x="43" y="71" width="191" height="20" uuid="a54dab80-8097-451c-970d-ee933864425c"/>
+				<text><![CDATA[Mọi phản hồi zui lòng liên hệ: 0868168475]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="59" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,138 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 22, 2023, 3:50:09 PM
+    Author     : Admin
+*/
+
+.top-form{
+    -fx-background-color: #fff;
+    -fx-border-color: #000;
+    -fx-border-width: .6px .6px .3px .6px;
+
+}
+.close{
+    -fx-background-color: transparent;
+    -fx-cursor: hand; 
+}
+.close:hover{
+    -fx-background-color: #f43f57;
+
+}
+
+.minus{
+    -fx-background-color: transparent;
+    -fx-cursor: hand; 
+}
+.minus:hover{
+    -fx-background-color: #ddd;
+
+}
+.nav-form{
+    -fx-background-color:  linear-gradient(to bottom right,#41b0c7,#9a1fbc );
+}
+.nav-btn{
+    -fx-background-color: transparent;
+    -fx-cursor: hand; 
+    -fx-font-family: "Arial";
+    -fx-font-size: 19 px;
+    -fx-text-fill: #fff;
+    -fx-alignment: center-left;
+      -fx-border-width: 1px
+}
+.nav-btn:hover{
+    -fx-background-color:  linear-gradient(to bottom right,#41b0c7,#9a1fbc );
+}
+
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0, 0.4), 5,0,0,0 );
+}
+
+.white-bg{
+    -fx-background-color: #fff;
+    -fx-background-radius: 8px;
+}
+
+.textfield{
+    -fx-background-color:  linear-gradient(to bottom right,#efefef,#eee);
+    -fx-background-radius: 4px;
+    -fx-border-color: linear-gradient(to bottom right,#41b0c7,#9a1fbc );
+    -fx-border-radius: 4px;
+    -fx-border-width: 1px
+}
+.textfield:focused{
+    -fx-background-color:  #fff;
+    -fx-border-width: 2px;
+}
+.import-btn{
+    -fx-background-color:  transparent;
+    -fx-text-fill: red;
+    -fx-cursor: hand;
+}
+
+.add-btn{
+    -fx-background-color:  #243e64;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #fff;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    
+}
+.add-btn:hover{
+    -fx-background-color:  #4969a1;
+}
+
+.update-btn{
+    -fx-background-color:  #5ae4c6;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #fff;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+.update-btn:hover{
+    -fx-background-color:  #4969a1;
+}
+
+.delete-btn{
+    -fx-background-color:  #ac2b5f;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #fff;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+.delete-btn:hover{
+    -fx-background-color:  #4969a1;
+}
+.reset-btn{
+    -fx-background-color:  #8335a6;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #fff;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+.reset-btn:hover{
+    -fx-background-color:  #4969a1;
+}
+
+.table-view{
+    -fx-background-color: transparent;
+    -fx-padding: 0px;
+    -fx-border-color: linear-gradient(to bottom right,#41b0c7,#9a1fbc );
+    -fx-border-radius: 8px;
+    -fx-border-width: 2px;
+}
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(to bottom right,#41b0c7,#9a1fbc );
+    -fx-border-radius: 8px 8px 0px 0px;
+}
+.table-view .column-header, .filler{
+    -fx-background-color: transparent;
+    -fx-size: 50px;
+}

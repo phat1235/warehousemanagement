@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.customerController">
+   <children>
+      <AnchorPane fx:id="customers_Form" layoutX="10.0" layoutY="21.0" prefHeight="710" prefWidth="1060" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="10.0" layoutY="32.0" prefHeight="674.0" prefWidth="266.0" stylesheets="@dashboardDegisn.css" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="784.0" AnchorPane.topAnchor="32.0">
+               <styleClass>
+                  <String fx:value="shadow" />
+                  <String fx:value="white-bg" />
+               </styleClass>
+               <children>
+                  <Label layoutX="23.0" layoutY="167.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="customer_fullname" layoutX="96.0" layoutY="153.0" prefHeight="35.0" prefWidth="140.0" styleClass="textfield" stylesheets="@dashboardDegisn.css" />
+                  <Button fx:id="customer_addBtn" layoutX="16.0" layoutY="413.0" mnemonicParsing="false" onAction="#customerAdd" prefHeight="40.0" prefWidth="100.0" styleClass="add-btn" stylesheets="@dashboardDegisn.css" text="Add" />
+                  <Button fx:id="customer_updateBtn" layoutX="142.0" layoutY="413.0" mnemonicParsing="false" onAction="#customerUpdate" prefHeight="40.0" prefWidth="100.0" styleClass="update-btn" stylesheets="@dashboardDegisn.css" text="Update" />
+                  <Button fx:id="customer_deleteBtn" layoutX="16.0" layoutY="502.0" mnemonicParsing="false" onAction="#customerDelete" prefHeight="40.0" prefWidth="100.0" styleClass="delete-btn" stylesheets="@dashboardDegisn.css" text="Delete" />
+                  <Label layoutX="37.0" layoutY="213.0" text="Address:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="customer_address" layoutX="96.0" layoutY="209.0" prefHeight="35.0" prefWidth="139.0" styleClass="textfield" stylesheets="@dashboardDegisn.css" />
+                  <Label layoutX="23.0" layoutY="157.0" text="Full Name:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="customer_phonenumber" layoutX="97.0" layoutY="261.0" prefHeight="35.0" prefWidth="140.0" styleClass="textfield" stylesheets="@dashboardDegisn.css" />
+                  <Label layoutX="66.0" layoutY="318.0" text="ID:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="customer_id" layoutX="99.0" layoutY="315.0" prefHeight="35.0" prefWidth="139.0" styleClass="textfield" stylesheets="@dashboardDegisn.css" />
+                  <Label layoutX="35.0" layoutY="265.0" prefHeight="20.0" prefWidth="59.0" text="Phone.N:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="285.0" layoutY="33.0" onMouseClicked="#customerSelect" prefHeight="674.0" prefWidth="772.0" stylesheets="@dashboardDegisn.css">
+               <styleClass>
+                  <String fx:value="shadow" />
+                  <String fx:value="white-bg" />
+               </styleClass>
+               <children>
+                  <TextField fx:id="customer_search" layoutX="412.0" layoutY="50.0" onAction="#customerSearch" prefHeight="35.0" prefWidth="359.0" promptText="Search" styleClass="textfield" stylesheets="@dashboardDegisn.css" />
+                  <TableView fx:id="customer_tableView" layoutX="47.0" layoutY="100.0" onMouseClicked="#customerSelect" pickOnBounds="false" prefHeight="574.0" prefWidth="772.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+                     <columns>
+                        <TableColumn fx:id="customer_col_fullname" editable="false" prefWidth="197.60003662109375" sortType="DESCENDING" sortable="false" text="Full Name" />
+                        <TableColumn fx:id="customer_col_address" editable="false" prefWidth="253.60000610351562" text="Address" />
+                        <TableColumn fx:id="customer_col_phonenumber" editable="false" prefWidth="199.199951171875" text="Phone Number" />
+                        <TableColumn fx:id="customer_col_id" editable="false" prefWidth="114.4000244140625" text="ID" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="5.0" layoutY="48.0" prefHeight="35.0" prefWidth="186.0" text="List of Customers" textFill="#527b48">
+                     <font>
+                        <Font name="Berlin Sans FB" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

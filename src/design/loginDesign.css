@@ -1,0 +1,23 @@
+.left-form{
+    -fx-background-color:  linear-gradient(to bottom right,#41b0c7,#9a1fbc );
+}   
+.right-form{
+    -fx-background-color:  linear-gradient(to bottom right,#41b0c7,#9a1fbc );
+    -fx-background-radius: 5px
+}
+.login-btn{
+     -fx-background-color: #20baad;
+}
+.login-btn:hover{
+     -fx-background-color: #2480c1;
+}
+.close-btn{
+     -fx-background-color: #20baad;
+}
+.close-btn:hover{
+    fx-background-color:  #2480c1;
+}
+.right-form1{
+    -fx-background-color:  linear-gradient(to bottom right,#277bae,#512d8c );
+    -fx-background-radius: 5px
+}

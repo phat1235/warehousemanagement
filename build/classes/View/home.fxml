@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="710.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.homeController">
+   <children>
+      <AnchorPane prefHeight="710.0" prefWidth="1050.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="home_form" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="710.0" prefWidth="1050.0" styleClass="right-form" stylesheets="@dashboardDegisn.css">
+               <children>
+                  <AnchorPane prefHeight="166.0" prefWidth="1062.0">
+                     <styleClass>
+                        <String fx:value="right-form" />
+                        <String fx:value="column-header-background" />
+                     </styleClass>
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="7.0" prefHeight="154.0" prefWidth="314.0" styleClass="right-form1">
+                           <children>
+                              <FontAwesomeIcon glyphName="SHOPPING_CART" layoutX="14.0" layoutY="80.0" size="4EM" wrappingWidth="69.5428819656372" />
+                              <Label layoutX="8.0" layoutY="18.0" text="Number of order">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="home_NumberOrder" alignment="CENTER_RIGHT" layoutX="114.0" layoutY="14.0" prefHeight="18.0" prefWidth="138.0" text="0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="20.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="revenue_order" layoutX="200.0" layoutY="87.0" onAction="#homeDisplayTotalOrder" onMouseClicked="#revenueOrder" prefHeight="26.0" prefWidth="104.0" promptText="Tháng" styleClass="right-form" stylesheets="@dashboardDegisn.css" />
+                           </children>
+                           <stylesheets>
+                              <URL value="@loginDesign.css" />
+                              <URL value="@dashboardDegisn.css" />
+                           </stylesheets>
+                        </AnchorPane>
+                        <AnchorPane layoutX="363.0" layoutY="6.0" prefHeight="154.0" prefWidth="314.0" styleClass="right-form1">
+                           <children>
+                              <FontAwesomeIcon glyphName="MONEY" layoutX="14.0" layoutY="80.0" size="4EM" wrappingWidth="69.5428819656372" />
+                              <Label layoutX="9.0" layoutY="18.0" text="Total income">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="home_TotalIncome" alignment="CENTER_RIGHT" layoutX="135.0" layoutY="16.0" prefHeight="18.0" prefWidth="138.0" text="\$0">
+                                 <font>
+                                    <Font name="System Italic" size="20.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="revenue_income" layoutX="204.0" layoutY="87.0" onAction="#homeDisplayIncomeOrder" onMouseClicked="#revenueOrder" prefHeight="26.0" prefWidth="95.0" promptText="Tháng" styleClass="right-form" stylesheets="@dashboardDegisn.css" />
+                           </children>
+                           <stylesheets>
+                              <URL value="@loginDesign.css" />
+                              <URL value="@dashboardDegisn.css" />
+                           </stylesheets>
+                        </AnchorPane>
+                        <AnchorPane layoutX="694.0" layoutY="6.0" prefHeight="154.0" prefWidth="322.0" styleClass="right-form1">
+                           <children>
+                              <FontAwesomeIcon glyphName="SHOPPING_CART" layoutX="14.0" layoutY="80.0" size="4EM" wrappingWidth="69.5428819656372" />
+                              <Label layoutX="26.0" layoutY="18.0" text="Available Product">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="home_AvalableProduct" alignment="CENTER_RIGHT" layoutX="176.0" layoutY="16.0" prefHeight="18.0" prefWidth="138.0" text="0">
+                                 <font>
+                                    <Font name="System Italic" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <stylesheets>
+                              <URL value="@loginDesign.css" />
+                              <URL value="@dashboardDegisn.css" />
+                           </stylesheets>
+                        </AnchorPane>
+                     </children>
+                     <stylesheets>
+                        <URL value="@dashboardDegisn.css" />
+                        <URL value="@loginDesign.css" />
+                     </stylesheets>
+                  </AnchorPane>
+                  <AnchorPane layoutX="12.0" layoutY="202.0" prefHeight="505.0" prefWidth="1050.0" stylesheets="@dashboardDegisn.css">
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <AnchorPane layoutX="524.0" layoutY="12.0" prefHeight="478.0" prefWidth="512.0" stylesheets="@dashboardDegisn.css">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <AreaChart fx:id="home_IncomeChart" layoutX="31.0" layoutY="26.0" prefHeight="478.4" prefWidth="512.0" title="Income Data Chart" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </AreaChart>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="7.0" layoutY="14.0" prefHeight="472.0" prefWidth="490.0" stylesheets="@dashboardDegisn.css">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <BarChart fx:id="home_OrderChart" layoutY="2.0" prefHeight="478.0" prefWidth="490.0" title="Order Data Chart" AnchorPane.bottomAnchor="-8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </BarChart>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
